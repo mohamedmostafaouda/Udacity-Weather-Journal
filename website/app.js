@@ -1,5 +1,5 @@
 // Personal API Key for OpenWeatherMap API
-let key = 'b741bc4a613647a1a082a80f8f12bcc4';
+const key = 'b741bc4a613647a1a082a80f8f12bcc4';
 
 // Event listener to add function to existing HTML DOM element
 document.getElementById('generate').addEventListener('click',changeView)
@@ -40,7 +40,7 @@ function getCurDate() {
 
 /* Function to GET Web API Data*/
 const getData = async (zip)=>{
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${zip}&appid=${key}`;
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${zip}&appid=${key}&units=imperial`;
     const response = await fetch(url);
     try{
         const newData = response.json();
